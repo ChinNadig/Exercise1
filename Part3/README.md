@@ -22,29 +22,19 @@ Whereas in parallelism multiple tasks run at the same time using multi-core infr
  ### Does creating concurrent programs make the programmer's life easier? Harder? Maybe both?
  (Come back to this after you have worked on part 4 of this exercise)
  
- > Both. Situations that require concurrency are easier to solve, however it introduces more
-	complexity to the system and introduces its own set of issues.
+ > Both. Situations that require concurrency are easier to solve, however it introduces more complexity to the system and introduces its own set of issues.
  
  ### What are the differences between processes, threads, green threads, and coroutines?
  
- > Processes run in separate memory spaces.
-Threads run in shared memory space.
-
-Standard threads are scheduled by the operating system.
-Green threads are scheduled by a virtual machine.
-
-Coroutines are routines that can run for a while, then return control to another routine, then run some more from where they left off.
+ > Processes run in separate memory spaces. Threads run in shared memory space. Standard threads are scheduled by the operating system. Green threads are scheduled by a virtual machine. Coroutines are routines that can run for a while, then return control to another routine, then run some more from where they left off.
  
  ### Which one of these do `pthread_create()` (C/POSIX), `threading.Thread()` (Python), `go` (Go) create?
  
- > pthread_create() creates thread
-threading.Thread() creates thread
-Go creates a goroutine which is like a thread managed by the go runtime
+ > pthread_create() creates a thread. threading.Thread() also creates a thread. Go creates a goroutine which is like a thread managed by the go runtime.
  
  ### How does pythons Global Interpreter Lock (GIL) influence the way a python Thread behaves?
  
- > CPythons memory management is not thread-safe, thus the GIL is needed to prevent multiple threads from
-		running the same bytecode. 
+ > CPythons memory management is not thread-safe, thus the GIL is needed to prevent multiple threads from running the same bytecode. 
  
  ### With this in mind: What is the workaround for the GIL (Hint: it's another module)?
  
